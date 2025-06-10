@@ -4,10 +4,10 @@ import { Button } from '@/components/ui/moving-border'
 
 function HeroSection() {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden ">
       {/* 🎥 Background Video: Fullscreen & fixed */}
       <video
-        className="fixed top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
         src="/videos/a81d9135dd07c1a29776faafd2eca16d.mp4"
         autoPlay
         muted
