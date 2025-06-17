@@ -3,12 +3,17 @@ import './globals.css';
 // import Navbar from '@/components/ui/Navbar'; // Ensure the module exists or correct the path
 import HeroSection from '@/components/HeroSection';
 import DesignFeatureSection from '@/components/DesignFeatureSection';
+import { CustomerReview } from '@/components/CustomerReview';
+import TestimonialCard from '@/components/TestimonialCard';
+import PortfolioGallery from '@/components/PortfolioGallery';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
       <DesignFeatureSection />
+     <TestimonialCard />
+     <PortfolioGallery />
       
     </main>
   );
