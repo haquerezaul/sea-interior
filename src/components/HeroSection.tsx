@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Button } from '@/components/ui/moving-border'
-
+import Link from "next/link";
 function HeroSection() {
   return (
     <div className="relative w-full h-screen overflow-hidden ">
@@ -38,12 +38,17 @@ function HeroSection() {
       >
       View Portfolio
       </Button>
-      <Button
-        borderRadius="1.75rem"
-        className="bg-teal-600 dark:bg-teal-600 text-black font-bold italic merienda text-lg dark:text-black border-neutral-700 dark:border-slate-800"
-      >
-        Get  Free Estimate
-      </Button>
+    
+
+<Link href="/budget">
+  <Button
+    borderRadius="1.75rem"
+    className="bg-teal-600 dark:bg-teal-600 text-black font-bold italic merienda text-lg dark:text-black border-neutral-700 dark:border-slate-800"
+  >
+    Get Free Estimate
+  </Button>
+</Link>
+      
         </div>
       </div>
     </div>
