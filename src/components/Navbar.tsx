@@ -15,7 +15,7 @@ function NavbarComponent() {
   const navItems = [
     { name: "Home", link: "/" },
     { name: "Services", link: "#pricing" },
-    { name: "About", link: "#contact" },
+    { name: "About", link: "#about" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

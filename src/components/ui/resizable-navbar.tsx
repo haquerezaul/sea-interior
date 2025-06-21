@@ -128,7 +128,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <a
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 font-bold dark:text-neutral-300"
+          className="relative px-4 py-2 text-white font-bold dark:text-white-300"
           key={`link-${idx}`}
           href={item.link}
         >
@@ -224,9 +224,9 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX className="text-white dark:text-white" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 className="text-white dark:text-white" onClick={onClick} />
   );
 };
 
@@ -244,7 +244,7 @@ export const NavbarLogo = () => {
         className="rounded-full"
         style={{ boxShadow: "0 0 24px rgba(34, 42, 53, 0.06)" }}
       />
-      <span className="font-medium text-black   text-3xl [text-shadow:4px_2px_2px_#000000] dark:text-white">Sea-Interior</span>
+      <span className="font-medium text-white  text-3xl [text-shadow:4px_2px_2px_#000000] dark:text-white">Sea-Interior</span>
     </a>
   );
 };

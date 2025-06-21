@@ -6,6 +6,9 @@ import DesignFeatureSection from '@/components/DesignFeatureSection';
 import { CustomerReview } from '@/components/CustomerReview';
 import TestimonialCard from '@/components/TestimonialCard';
 import PortfolioGallery from '@/components/PortfolioGallery';
+import { StaggerTestimonials } from '@/components/ui/stagger-testimonials';
+import BenefitsCards from '@/components/ui/BenifitsCards';
+import AboutUs from '@/components/AboutUs';
 
 export default function Home() {
   return (
@@ -14,7 +17,9 @@ export default function Home() {
       <DesignFeatureSection />
      <TestimonialCard />
      <PortfolioGallery />
-      
+     <StaggerTestimonials/>
+     <BenefitsCards/>
+      <AboutUs />
     </main>
   );
 }

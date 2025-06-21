@@ -4,6 +4,8 @@ import "./globals.css";
 
 
 import NavbarComponent from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsappButton";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,6 +39,8 @@ export default function RootLayout({
           </div>
         {children}
         </div>
+        < Footer />
+        <WhatsAppButton/>
       </body>
     </html>
   );

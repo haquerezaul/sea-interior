@@ -33,7 +33,7 @@ const PortfolioGallery = () => {
   const filteredImages = allImages.filter((img) => img.category === selected);
 
   return (
-    <section className="px-4 py-16 text-center bg-white">
+    <section className="px-4 py-16 text-center bg-white h-auto">
       <h2 className="text-2xl md:text-4xl playfair font-semibold mb-6 text-teal-700 [text-shadow:3px_3px_0_#fff,_-1px_1px_0_#fff,_-1px_-1px_0_#fff,1px_-1px_0_#fff]">
         Explore Real Spaces We've Transformed
       </h2>
