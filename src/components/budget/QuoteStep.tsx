@@ -52,21 +52,21 @@ const QuoteStep: React.FC<QuoteStepProps> = ({ formData, setFormData, prev }) =>
   };
 
   const furnitureItems = flattenFurniture(furniture);
-  const serviceItems = Array.isArray(services)
-    ? services.map((s: string) => ({
-        category: "Services",
-        name: s,
-        quantity: parseFloat(carpetArea) || 1000,
-        unitCost: unitPrices[s] || 100,
-      }))
-    : [];
+  const serviceItems = Array.isArray(services?.list)
+  ? services.list.map((s: string) => ({
+      category: "Services",
+      name: s,
+      quantity: parseFloat(carpetArea) || 1000,
+      unitCost: unitPrices[s] || 100,
+    }))
+  : [];
 
-  const flooringItems = flooringType
+    const flooringItems = services.flooring && services.flooring !== 'None'
     ? [{
         category: "Flooring",
-        name: flooringType,
+        name: services.flooring,
         quantity: parseFloat(carpetArea) || 1000,
-        unitCost: unitPrices[flooringType] || 100,
+        unitCost: unitPrices[services.flooring] || 100,
       }]
     : [];
 

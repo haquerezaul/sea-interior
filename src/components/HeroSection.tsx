@@ -32,12 +32,14 @@ function HeroSection() {
           Let us turn your vision into a place you’ll love coming home to.
           </p>
         <div className="flex justify-center space-x-5 md:space-x-10 pt-4 ">
+        <Link href="/portfolio">
         <Button
         borderRadius="1.75rem"
         className="bg-teal-600 dark:bg-teal-600 text-black font-bold italic merienda text-lg dark:text-black border-neutral-700 dark:border-slate-800"
       >
       View Portfolio
       </Button>
+</Link>
     
 
 <Link href="/budget">
