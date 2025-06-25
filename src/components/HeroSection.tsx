@@ -7,16 +7,16 @@ function HeroSection() {
     <div className="relative w-full h-screen overflow-hidden ">
       {/* 🎥 Background Video: Fullscreen & fixed */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
-        src="/videos/a81d9135dd07c1a29776faafd2eca16d.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
+  className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none opacity-90"
+  src="/videos/a81d9135dd07c1a29776faafd2eca16d.mp4"
+  autoPlay
+  muted
+  loop
+  playsInline
+/>
 
       {/* 🔲 Dark overlay (optional) */}
-      <div className="fixed inset-0 bg-black/40 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-transparent z-10 pointer-events-none" />
 
       {/* 🔤 Foreground content */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center text-white px-4 h-screen">

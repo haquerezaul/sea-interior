@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sea Interior Chatbot</title>
+</head>
+<body>
+  <h3>Welcome! 😊</h3>
+
+  <!-- User Info Form -->
+  <form id="userForm">
+    <input name="name" placeholder="Your Name" required /><br/>
+    <input name="phone" placeholder="Phone Number" required /><br/>
+    <input name="location" placeholder="Location" required /><br/> <!-- Location added here -->
+    <input name="pincode" placeholder="Pincode" required /><br/>
+    <button type="submit">Start Chat</button>
+  </form>
+
+  <!-- Chat Section -->
+  <div id="chatSection" style="display:none;">
+    <p>Ask anything related to Sea Interior:</p>
+    <input id="userMessage" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+    <div id="chatLog" style="white-space: pre-line; margin-top: 10px;"></div>
+  </div>
+
+  <script>
+    let userData = {};
+
+    // When form is submitted
+    document.getElementById('userForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      userData = Object.fromEntries(formData.entries());
+
+      // Send user data to API
+      const res = await fetch('/api/save-user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData)
+      });
+
+      const result = await res.json();
+      if (result.message) {
+        alert(result.message);
+        document.getElementById('userForm').style.display = 'none';
+        document.getElementById('chatSection').style.display = 'block';
+      } else {
+        alert('Error saving user data.');
+      }
+    };
+
+    // Chat message send function
+    async function sendMessage() {
+      const msg = document.getElementById('userMessage').value;
+      if (!msg) return alert('Please type a message!');
+
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userMessage: msg })
+      });
+
+      const data = await res.json();
+      const chatLog = document.getElementById('chatLog');
+      chatLog.innerText += 'You: ' + msg + '\nAI: ' + data.text + '\n';
+      document.getElementById('userMessage').value = ''; // clear after sending
+    }
+  </script>
+</body>
+</html> 
+
+
+
+
+
