@@ -9,6 +9,7 @@ import PortfolioGallery from '@/components/PortfolioGallery';
 import { StaggerTestimonials } from '@/components/ui/stagger-testimonials';
 import BenefitsCards from '@/components/ui/BenifitsCards';
 import AboutUs from '@/components/AboutUs';
+import EstimatorLayout from '@/components/QuoteEstimator/EstimatorLayout';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <DesignFeatureSection />
      <TestimonialCard />
      <PortfolioGallery />
+     
      <StaggerTestimonials/>
      <BenefitsCards/>
       <AboutUs />

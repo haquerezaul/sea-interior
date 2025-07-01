@@ -9,12 +9,13 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
+import Link from "next/link";
 import { useState } from "react";
 
 function NavbarComponent() {
   const navItems = [
     { name: "Home", link: "/" },
-    { name: "Services", link: "#pricing" },
+    { name: "QuickQuotation", link: "/QuickQuote" },
     { name: "About", link: "#about" },
   ];
 
@@ -57,14 +58,14 @@ function NavbarComponent() {
             onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="relative text-neutral-600 dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>
-              </a>
+              </Link>
             ))}
             <div className="flex w-full flex-col gap-4">
               <a
