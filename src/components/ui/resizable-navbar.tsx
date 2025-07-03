@@ -237,12 +237,12 @@ export const NavbarLogo = () => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <img
-        src="/LOGO/LOGO.jpg"
+        src="/LOGO/LOGO.png"
         alt="logo"
         width={45}
         height={40}
-        className="rounded-full"
-        style={{ boxShadow: "0 0 24px rgba(34, 42, 53, 0.06)" }}
+        className="transparent "
+        style={{  }}
       />
       <span className="font-medium text-white  text-3xl [text-shadow:4px_2px_2px_#000000] dark:text-white">Sea-Interior</span>
     </a>
