@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Manrope } from "next/font/google";
+
 
 
 import NavbarComponent from "@/components/Navbar";
@@ -8,6 +10,12 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsappButton";
 import ChatbotButton from "@/components/ui/ChatbotButton";
 import MrDesignerChatbot from "@/components/MrDesignerChatbot";
+
+const manropeFont = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={` ${manropeFont.className} antialiased `}
       >
         <div className="relative">
       <div className="absolute top-6 left-0 w-full z-50">

@@ -26,7 +26,7 @@ function HeroSection() {
         <p className="text-2xl md:text-3xl mb-5 pt-3 text-white [text-shadow:4px_2px_2px_#000000]">
           Where Dream Meets Destiny - Transforming Spaces with Elegance
         </p>
-        <p className='text-xl md:text-2xl pt-4 mb-8 mx-6 playfair font-medium text-white [text-shadow:2px_3px_3px_#000000] '>
+        <p className='text-xl md:text-2xl pt-4 mb-8 mx-6  font-medium text-white [text-shadow:2px_3px_3px_#000000] '>
           At Sea Interior, we don’t just design spaces — we shape experiences.
           From luxury living rooms to elegant workspaces, our bespoke interiors bring out the soul of every space.
           Let us turn your vision into a place you’ll love coming home to.
@@ -35,7 +35,7 @@ function HeroSection() {
         <Link href="/portfolio">
         <Button
         borderRadius="1.75rem"
-        className="bg-teal-600 dark:bg-teal-600 text-black font-bold italic merienda text-lg dark:text-black border-neutral-700 dark:border-slate-800"
+        className="bg-teal-600 dark:bg-teal-600 text-black playfair font-bold  text-lg dark:text-black border-neutral-700 dark:border-slate-800"
       >
       View Portfolio
       </Button>
@@ -45,9 +45,9 @@ function HeroSection() {
 <Link href="/budget">
   <Button
     borderRadius="1.75rem"
-    className="bg-teal-600 dark:bg-teal-600 text-black font-bold italic merienda text-lg dark:text-black border-neutral-700 dark:border-slate-800"
+    className="bg-teal-600 dark:bg-teal-600 text-black playfair font-bold  text-lg dark:text-black border-neutral-700 dark:border-slate-800"
   >
-    Get Free Estimate
+    Get Estimate
   </Button>
 </Link>
       

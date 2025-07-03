@@ -53,13 +53,17 @@ export default function PortfolioPage() {
       : images.filter((img) => img.category === selectedCategory);
 
   return (
-    <main className="pt-24 pb-20 px-4 sm:px-8 md:px-12 lg:px-24">
-      <h1 className="text-center text-3xl md:text-4xl font-semibold text-teal-700 mb-6">
+    <main className="relative pt-24 bg-gray-100 pb-20 px-4 sm:px-8 md:px-12 lg:px-24">
+
+      {/* Top gradient overlay behind navbar */}
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/40 to-transparent z-0 pointer-events-none" />
+
+      <h1 className="relative z-10 text-center text-3xl md:text-4xl font-semibold text-teal-700 mb-6">
         Our Portfolio
       </h1>
 
       {/* Mobile Dropdown */}
-      <div className="sm:hidden mb-6">
+      <div className="sm:hidden mb-6 relative z-10">
         <select
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
@@ -69,26 +73,32 @@ export default function PortfolioPage() {
             <option key={cat} value={cat}>
               {cat === "all"
                 ? "All"
-                : cat.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/\b\w/g, (c) => c.toUpperCase())}
+                : cat
+                    .replace(/([a-z])([A-Z])/g, "$1 $2")
+                    .replace(/\b\w/g, (c) => c.toUpperCase())}
             </option>
           ))}
         </select>
       </div>
 
       {/* Desktop Filter Buttons */}
-      <div className="hidden sm:flex flex-wrap justify-center gap-2 mb-10 overflow-x-auto scrollbar-none">
+      <div className="hidden sm:flex flex-wrap justify-center gap-2 mb-10 overflow-x-auto scrollbar-none relative z-10">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300 whitespace-nowrap
-              ${selectedCategory === cat
-                ? "bg-teal-600 text-white border-teal-600"
-                : "bg-white text-teal-700 border-teal-300 hover:bg-teal-100"}`}
+              ${
+                selectedCategory === cat
+                  ? "bg-teal-600 text-white border-teal-600"
+                  : "bg-white text-teal-700 border-teal-300 hover:bg-teal-100"
+              }`}
           >
             {cat === "all"
               ? "All"
-              : cat.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/\b\w/g, (c) => c.toUpperCase())}
+              : cat
+                  .replace(/([a-z])([A-Z])/g, "$1 $2")
+                  .replace(/\b\w/g, (c) => c.toUpperCase())}
           </button>
         ))}
       </div>
@@ -96,7 +106,7 @@ export default function PortfolioPage() {
       {/* Gallery Grid */}
       <div
         key={selectedCategory}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 relative z-10"
       >
         {filtered.map((img, index) => (
           <div

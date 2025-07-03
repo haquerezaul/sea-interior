@@ -81,7 +81,7 @@ const PortfolioGallery = () => {
       <div className="mt-12">
         <a
           href="/portfolio"
-          className="inline-block bg-teal-400 dark:bg-teal-400 text-black font-bold italic merienda text-lg dark:text-black px-8 py-3 rounded-full "
+          className="inline-block bg-teal-400 dark:bg-teal-400 text-black font-bold  playfair text-lg dark:text-black px-8 py-3 rounded-full "
         >
           View Portfolio
         </a>

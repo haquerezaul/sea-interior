@@ -1,3 +1,5 @@
+// src/components/budget/ServiceStep.tsx
+
 'use client';
 
 import React from 'react';
@@ -9,16 +11,21 @@ interface ServiceStepProps {
   prev: () => void;
 }
 
-const serviceList = [
+const serviceOptions = [
   'False Ceiling',
   'Painting',
   'Electrical & Lighting'
 ];
 
-const flooringOptions = ['None', 'Marble', 'Tiles', 'Wooden Flooring', 'Carpet'];
+const flooringOptions = [
+  'Marble',
+  'Tiles',
+  'Wooden Flooring',
+  'Carpet',
+];
 
 const ServiceStep: React.FC<ServiceStepProps> = ({ formData, setFormData, next, prev }) => {
-  const services = formData.services;
+  const services = formData.services || { list: [], flooring: '' };
 
   const toggleService = (service: string) => {
     const updatedList = services.list.includes(service)
@@ -46,16 +53,16 @@ const ServiceStep: React.FC<ServiceStepProps> = ({ formData, setFormData, next, 
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-4 text-black  ">Select Services</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-black">Select Services</h2>
 
       <div className="grid gap-4 mb-6">
-        {serviceList.map((service) => (
+        {serviceOptions.map((service) => (
           <label key={service} className="flex items-center space-x-3">
             <input
               type="checkbox"
               checked={services.list.includes(service)}
               onChange={() => toggleService(service)}
-              className="w-5 h-5 accent-teal-600 focus:ring-teal-600 focus:border-teal-600"
+              className="w-5 h-5 accent-teal-600"
             />
             <span className="text-gray-700">{service}</span>
           </label>
@@ -71,9 +78,7 @@ const ServiceStep: React.FC<ServiceStepProps> = ({ formData, setFormData, next, 
           onChange={handleFlooringChange}
           className="w-full border border-gray-300 rounded px-3 py-2 text-black hover:border-teal-700 focus:outline-none focus:border-teal-700"
         >
-          <option value="" disabled>
-            -- Select Flooring --
-          </option>
+          <option value="">-- Select Flooring --</option>
           {flooringOptions.map((option) => (
             <option key={option} value={option}>
               {option}

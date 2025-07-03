@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 interface Props {
   formData: any;
@@ -10,28 +10,13 @@ interface Props {
 }
 
 const homeTypes = [
-  { type: '1 BHK', image: '/images/1bhk.jpeg' },
-  { type: '2 BHK', image: '/images/2bhk.jpeg' },
-  { type: '3 BHK', image: '/images/3bhk.jpeg' },
-  { type: '4 BHK', image: '/images/4bhk.jpeg' },
+  { type: "1 BHK", image: "/images/1bhk.jpeg" },
+  { type: "2 BHK", image: "/images/2bhk.jpeg" },
+  { type: "3 BHK", image: "/images/3bhk.jpeg" },
+  { type: "4 BHK", image: "/images/4bhk.jpeg" },
 ];
 
-const HomeTypeStep = ({ formData = {}, setFormData, next }: Props) => {
-  const handleSelectHome = (type: string) => {
-    setFormData({
-      ...formData,
-      homeType: type,
-    });
-  };
-
-  const handleCarpetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value);
-    setFormData({
-      ...formData,
-      carpetArea: isNaN(value) ? '' : value,
-    });
-  };
-
+const Step1_HomeType = ({ formData, setFormData, next }: Props) => {
   return (
     <div className="text-center">
       <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
@@ -43,9 +28,9 @@ const HomeTypeStep = ({ formData = {}, setFormData, next }: Props) => {
           <div
             key={bhk.type}
             className={`border-4 p-2 rounded-xl cursor-pointer transition-all duration-300 ${
-              formData.homeType === bhk.type ? 'border-teal-500' : 'border-transparent'
+              formData.homeType === bhk.type ? "border-teal-500" : "border-transparent"
             }`}
-            onClick={() => handleSelectHome(bhk.type)}
+            onClick={() => setFormData({ ...formData, homeType: bhk.type })}
           >
             <Image
               src={bhk.image}
@@ -54,7 +39,7 @@ const HomeTypeStep = ({ formData = {}, setFormData, next }: Props) => {
               height={120}
               className="w-full h-auto object-contain"
             />
-            <p className="mt-2 font-medium">{bhk.type}</p>
+            <p className="mt-2 font-medium text-black">{bhk.type}</p>
           </div>
         ))}
       </div>
@@ -66,8 +51,8 @@ const HomeTypeStep = ({ formData = {}, setFormData, next }: Props) => {
         <input
           id="carpet"
           type="number"
-          value={formData.carpetArea || ''}
-          onChange={handleCarpetChange}
+          value={formData.carpetArea}
+          onChange={(e) => setFormData({ ...formData, carpetArea: e.target.value })}
           className="border text-black border-teal-600 rounded px-4 py-2 w-full md:w-1/2 hover:border-teal-700 focus:outline-none focus:border-teal-700"
           placeholder="e.g. 1200"
         />
@@ -84,4 +69,4 @@ const HomeTypeStep = ({ formData = {}, setFormData, next }: Props) => {
   );
 };
 
-export default HomeTypeStep;
+export default Step1_HomeType;

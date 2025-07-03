@@ -6,7 +6,7 @@ import logoBase64 from "@/lib/ logoBase64"; // Ensure this file exports a Base64
 interface PDFInput {
   user: {
     name: string;
-    email: string;
+    email?: string;
     phone: string;
     location: string;
   };
